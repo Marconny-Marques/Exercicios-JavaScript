@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        input {
+            height: 90px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <input type="button" value="Clique em mim" onclick="Contar()">
+    <input type="button" value="Zerar o contador" onclick="Zerou()">
+    <section id="res">
+        O contador está com 0 cliques
+    </section>
+</body>
+<script>
+        let c1 = 0
+        let res = document.querySelector('section#res')
+    function Contar() {
+        c1 ++
+        res.innerHTML = (`O contador está com ${c1} cliques`)
+    }
+
+    function Zerou() {
+        c1 = 0
+        res.innerHTML = null
+    }
+</script>
+</html>
