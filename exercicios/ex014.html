@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o sistema</title>
+</head>
+<style>
+    input {
+            font-size: 14pt;
+            height: 90px;
+            width: 200px;
+        }
+
+        p {
+            font-size: 16pt;
+        }
+</style>
+<body>
+    <h1>Interagindo com o sitema</h1>
+    <input type="button" value="Clique em mim" onclick="Sistema()">
+    <section id="res">
+        <p>Vai aparecer os dados de seu sistema aqui</p>
+    </section>
+</body>
+<script>
+    function Sistema() {
+        let dataAtual = new Date()
+        let res = window.document.querySelector('section#res')
+        res.innerHTML = (`<p>Os dados do seu sistema são <mark>${dataAtual}</mark></p>`)
+        let horario1 = manha
+        let horario2 = tarde
+        let horario3 = noite
+        switch(horario) {
+            case horario1: (0)
+                break
+            case horario2: 
+        }
+}
+</script>
+</html>

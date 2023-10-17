@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Valor</title>
+    <style>
+        input {
+            font-size: 12pt;
+            height: 90px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual o maior valor?</h1>
+    <input type="button" value="Clique para começar" onclick="Maiorque()">
+    <section id="res">
+        <p>O resultado vai aparecer aqui</p>
+    </section>
+</body>
+<script>
+    function Maiorque() {
+        let n1 = window.prompt('Digite um número: ')
+        let n2 = window.prompt('Digite outro número: ')
+
+        let res = window.document.querySelector('section#res')
+        if (n1 > n2) {
+            res.innerHTML = (`Analisando os valores ${n1} e ${n2} percebe-se que o maior valor é ${n2}`)
+        } else if (n1 < n2) {
+            res.innerHTML = (`Analisando os valores ${n1} e ${n2} percebe-se que o maior valor é ${n1}`)
+        } else {
+            res.innerHTML = (`Perceba que ${n1} e ${n2} são valores iguais.`)
+        }
+    }
+</script>
+</html>
