@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas ações</title>
+    <style>
+         input {
+            height: 90px;
+            width: 200px;
+         }
+
+         p {
+            font-size: 14pt;
+         }
+    </style>
+</head>
+<body>
+    <h1>Diversas operações matemáticas</h1>
+    <input type="button" value="Clique para Iniciar" onclick="Comecar()">
+    <section id="res">
+        <p>Clique no botão acima para começar</p>
+    </section>
+</body>
+<script>
+    function Comecar() {
+        let n1 = Number(window.prompt('Digite um número: '))
+        let n2 = Number(window.prompt('Digite outro número: '))
+        let op = Number(window.prompt(`Valores informados: ${n1} e ${n2}. \nO que vamos fazer? \n[1]Somar \n[2]Subtrair \n[3]Multiplicar \n[4]Dividir \n[5]Potência `))
+        let res = window.document.querySelector('section#res')
+        res.innerHTML = (`<h2>Calculando...</h2>`)
+        switch(op) {
+            case 1:
+                res.innerHTML += `<p>${n1} + ${n2} = <strong>${n1+n2}</strong></p>`
+                break
+            case 2:
+                res.innerHTML += (`<p>${n1} - ${n2} = <strong>${n1-n2}</strong></p>`)
+                break
+            case 3:
+                res.innerHTML +=(`<p>${n1} x ${n2} = <strong>${n1*n2}</strong></p>`)
+                break
+            case 4:
+                res.innerHTML += (`<p>${n1} / ${n2} = <strong>${n1/n2.toLocaleString('pt-br')}</strong></p>`)
+                break
+            case 5:
+                res.innerHTML += (`<p>${n1} elevado a ${n2} = <strong>${n1**n2}</strong></p>`)    
+                break
+            default: 
+                res.innerHTML += (`<p>OPÇÃO INVÁLIDA! Você digitou ${n1} e ${n2}, mas não estou programado a tal operação.</p>`)
+                break       
+                   
+        }
+    }
+</script>
+</html>

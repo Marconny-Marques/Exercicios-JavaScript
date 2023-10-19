@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações do ano</title>
+    <style>
+        input {
+            font-size: 12pt;
+            height: 90px;
+            width: 200px;
+        }
+
+        p {
+            font-size: 16pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <input type="button" value="informe o mês" onclick="Descobrir()">
+    <section id="res">
+        <p>Clique acima para informar o mês</p>
+    </section>
+</body>
+<script>
+    function Descobrir() {
+        let mês = window.prompt('Informe o mês do ano por estenso. Ex: Outubro')
+        let res = window.document.querySelector('section#res')
+        let estação
+        switch (mês.toUpperCase()) {
+        case 'DEZEMBRO': case 'JANEIRO': case 'FEVEREIRO': case 'MARÇO':
+            estação = 'VERÃO'
+            break
+        case 'ABRIL': case 'MAIO': case 'JUNHO':
+            estação = 'OUTONO'
+            break
+        case 'JULHO': case 'AGOSTO': case 'SETEMBRO':
+            estação = 'INVERNO'
+            break
+        case 'OUTUBRO': case 'NOVEMBRO': 
+             estação = 'PRIMAVERA'
+             break      
+        default:
+            estação = 'INDEFINIDA'
+            break     
+        }
+        res.innerHTML = (`<p>A estação correspondente ao mes de <strong>${mês}</strong> é a <mark>${estação}</mark></p>`)
+    }
+</script>
+</html>
