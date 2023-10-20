@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem regressiva</title>
+    <style>
+        input {
+            font-size:14pt;
+            height: 90px;
+            width: 200px;
+        }
+
+        p {
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem regressiva de 10 até 1</h1>
+    <input type="button" value="Contar de 10 a 1" onclick="Contar()">
+    <section id="res">
+        <p>Aperte o botão acima para contar &#9757</p>
+    </section>
+</body>
+<script>
+    function Contar() {
+     let res = document.querySelector('section#res')
+    res.innerHTML += (`<h2>Contagem regressiva de 10 a 1 </h2>`)
+    let cont = 10
+    while(cont>= 1) {
+        res.innerHTML += (`${cont} &#x1F449`)
+        cont --
+    }
+    res.innerHTML += (`&#x1F3C1`)   
+    }
+    
+</script>
+</html>

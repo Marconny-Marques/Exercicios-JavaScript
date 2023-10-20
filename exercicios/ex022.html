@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcando os números pares</title>
+    <style>
+        input {
+            font-size: 13pt;
+            height: 90px;
+            width: 200px;
+        }
+
+        p {
+            font-size: 16pt;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16pt;
+        }
+
+        h3 {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contando de 1 a 10 (Marcando os pares)</h1>
+    <input type="button" value="Contar de 1 a 10" onclick="Conta()">
+    <section id="res">
+        <p>Aperte o botão acima para contar &#128070</p>
+    </section>
+</body>
+<script>
+    function Conta() {
+        let res = document.querySelector('section#res')
+        res.innerHTML += (`<h3>Contando até 10 e marcando os pares</h3>`)
+        res.innerHTML += (`<h2>1 &#128073 <mark>2 &#128073</mark> 3 &#128073 <mark>4 &#128073</mark> 5 &#128073 <mark>6 &#128073</mark> 7 &#128073 <mark>8 &#128073</mark> 9 &#128073 <mark>10 &#128073</mark></h2>`)
+    }
+</script>
+</html>
