@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados de Formulário</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            
+        }
+
+        input#fnum {
+            width: 200px;
+        }
+
+        input#conta {
+            background-color: green;
+            color: white;
+        }
+        p {
+            font-size: 16pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contando de 0 até um número qualquer</h1>
+    <p>Escolha o limite final para a contagem...</p>
+    <section id="entrada">
+        <form action="#" method="get">
+            <label for="fnum">Valor final:</label>
+            <input type="number" name="number" id="fnum" placeholder="Apenas positivos">
+            <input type="submit" value="Contar" id="conta" formaction="javascript:contagem()">
+        </form>
+    </section>
+    <section id="saida">
+        <p>Preencha os dados acima e aperte o botão...</p>
+    </section>
+    <script>
+        function contagem() {
+         let saida = document.getElementById('saida')
+         let num = Number(document.getElementById('fnum').value)
+         saida.innerHTML += `<h2>Contando de 0 até ${num}</h2>`
+         let cont = 0
+         while (cont <= num) {
+            saida.innerHTML += `${cont}&#x1F449;`
+            cont ++
+         }   
+         saida.innerHTML += `&#x1F3C1;`
+        }
+    </script>
+</body>
+</html>
