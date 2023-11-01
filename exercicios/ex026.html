@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem inteligente</title>
+    <style>
+      input#Contar {
+        height: 40px;
+        width: 80px;
+        background-color: forestgreen;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <h1>Contagem "Inteligente"</h1>
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    <section id="entrada">
+        <form action="numIni" method="get">
+            <label for="ValorIni">Valor Inicial:</label>
+            <input type="number" name="Valor inicial" id="ValorIni" placeholder="Início da conta">
+        </form>
+    </section>
+
+    <section id="saida">
+        <form action="numFim" method="get">
+            <label for="Fimdcont">Fim da conta:</label>
+            <input type="number" name="Fim da conta" id="FimCon" placeholder="Último número">
+        </form>
+        <input type="button" value="Contar" onclick="Contar()" id="Contar">
+        <p>Preencha os dados acima, aperte o botão e espere a mágica acontecer...</p>
+    </section>
+</body>
+<script>
+    function Contar() {
+        let saida = document.getElementById('saida')
+        let n1 = Number(document.getElementById('ValorIni').value)
+        let n2 = Number(document.getElementById('FimCon').value)
+        let cont
+
+        saida.innerHTML += `<h2>Contando de ${n1} até ${n2}</h2>`
+        if (n1<n2) {
+            cont = n1
+            while (cont <= n2) {
+                saida.innerHTML += `${cont}&#x1F449;`
+                cont ++
+            }
+        } else if (n2<n1) {
+            cont = n1
+            while (cont >= n2) {
+                saida.innerHTML += `${cont} &#x1F449;`
+                cont --
+            }
+        } else {
+            saida.innerHTML += `Não é possível contar, pois os númeors são iguais`
+        }
+        saida.innerHTML += `&#x1F3C1;`
+    }
+</script>
+</html>
